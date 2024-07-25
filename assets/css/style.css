@@ -8,19 +8,7 @@
 
     height: 100px;
     text-transform: uppercase;
-    .logo {
-      display: inline-block;
-      box-sizing: border-box;
-      height: 100%;
-      width: 100%;
-      padding: 7px 0 10px 10px;
-      max-width: 97px;
-
-      img {
-        display: inline-block;
-        height: 100%;
-      }
-    }
+    
   } */
 
 .bg-top {
@@ -35,6 +23,130 @@
   }
 }
 
+nav.navStyle {
+  background-color: black !important;
+  .logo {
+    display: inline-block;
+    box-sizing: border-box;
+    height: 100%;
+    width: 100%;
+    padding: 7px 0 10px 10px;
+    max-width: 97px;
+
+    img {
+      display: inline-block !important;
+      max-width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+/* Extra small screens (xs) */
+@media (max-width: 575.99px) {
+  .navbar.bg-body-tertiary.fixed-top.navStyle {
+    height: 56px;
+  }
+}
+
+/* Small screens (sm) */
+@media (min-width: 576px) and (max-width: 767.99px) {
+  .navbar.bg-body-tertiary.fixed-top.navStyle {
+    height: 56px;
+  }
+}
+
+/* Medium screens (md) */
+@media (min-width: 768px) and (max-width: 991.99px) {
+  nav.navStyle {
+    height: 16px !important;
+  }
+
+  .navbar-brand .logo {
+    max-width: 165px;
+    padding: 8px 16px;
+  }
+  /* button .menuToggler{
+
+    width: auto;
+    padding: 18px 16px;
+    float: right;
+  } */
+
+  
+}
+
+/* Large screens (lg) */
+@media (min-width: 992px) and (max-width: 1199.99px) {
+  .navbar.bg-body-tertiary.fixed-top.navStyle {
+    height: 56px;
+  }
+}
+
+/* Extra large screens (xl) */
+@media (min-width: 1200px) and (max-width: 1399.99px) {
+  .navbar.bg-body-tertiary.fixed-top.navStyle {
+    height: 56px;
+  }
+}
+
+/* Extra extra large screens (xxl) */
+@media (min-width: 1400px) {
+  .navbar.bg-body-tertiary.fixed-top.navStyle {
+    height: 56px;
+  }
+
+  .navbar-brand .logo {
+    max-width: 165px;
+    padding: 8px 16px;
+  }
+ 
+}
+ nav button.menuToggler {
+  position: relative;
+    width: auto;
+    height: 100%;
+    display: inline-block;
+    align-items: center;
+  }
+
+  button.navbar-toggler.menuToggler span {
+    position: absolute;
+    background: white;
+    width: 16px;
+    height: 3px;
+    border-radius: 4px;
+    transition: 0.5s;
+
+}
+
+  button.navbar-toggler.menuToggler span:nth-child(1) {
+    transform: translateY(-6px);
+    width: 8;
+    height: 3px;  
+  
+  }
+
+  button.navbar-toggler.menuToggler span:nth-child(2) {
+    transform: translateY(6px);
+    width: 8;
+    height: 3px;  
+  
+
+    button.navbar-toggler.menuToggler.active span:nth-child(3) {
+      transform: translateY(12px);
+      width: 8;
+      height: 3px;  
+    
+    }
+  }
+a.nav-link {
+  color: white;
+  text-transform: uppercase;
+}
+
+a:hover.nav-link {
+  color: red;
+}
 .join {
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -66,7 +178,6 @@ a.join.outline-button {
 
   height: 20px;
 }
-
 .bg-cover {
   background-size: cover;
 }
@@ -5682,7 +5793,7 @@ p {
 }
 @media (min-width: 768px) {
   .join {
-    font-size: 28px;
+    font-size: 15px;
   }
 }
 .join .smaller {
