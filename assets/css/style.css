@@ -28,7 +28,7 @@ nav.navStyle {
   transition: background-color 0.3s, box-shadow 0.3s;
   height: 56px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  position: inherit;
+  position: sticky;
   padding: 0;
   top: 0;
   left: 0;
@@ -167,6 +167,8 @@ nav.navStyle {
       padding: 8px 16px;
       max-width: 165px;
     }
+
+
     .join {
       font-size: 10px;
       padding: 13px 30px 12px;
@@ -232,15 +234,15 @@ nav.navStyle {
 
 }
 
-nav button.menuToggler {
+nav button.iconToggler {
   position: relative;
   width: auto;
   height: 100%;
-  display: inline-block;
+  display: inline-block !important;
   align-items: center;
 }
 
-button.navbar-toggler.menuToggler span {
+button.navbar-toggler.iconToggler span {
   position: absolute;
   background: white;
   width: 16px;
@@ -249,18 +251,18 @@ button.navbar-toggler.menuToggler span {
   transition: 0.5s;
 }
 
-button.navbar-toggler.menuToggler span:nth-child(1) {
+button.navbar-toggler.iconToggler span:nth-child(1) {
   transform: translateY(-6px);
   width: 8;
   height: 3px;
 }
 
-button.navbar-toggler.menuToggler span:nth-child(2) {
+button.navbar-toggler.iconToggler span:nth-child(2) {
   transform: translateY(6px);
   width: 8;
   height: 3px;
 
-  button.navbar-toggler.menuToggler.active span:nth-child(3) {
+  button.navbar-toggler.iconToggler.active span:nth-child(3) {
     transform: translateY(12px);
     width: 8;
     height: 3px;
