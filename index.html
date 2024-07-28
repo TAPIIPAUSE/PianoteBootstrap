@@ -5,9 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/splide.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
@@ -34,195 +33,81 @@
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
 
-    <nav class="navbar navbar-expand-lg bg-body-tertiary navStyle">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="https://www.pianote.com">
-                <div class="logo">
-                    <img src="https://d21q7xesnoiieh.cloudfront.net/fit-in/250x0/filters:quality(95)/marketing/pianote/membership/homepage/2023/pianote-logo-red.png"
-                        alt="Pianote">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary navStyle">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="https://www.pianote.com">
+                    <div class="logo">
+                        <img src="https://d21q7xesnoiieh.cloudfront.net/fit-in/250x0/filters:quality(95)/marketing/pianote/membership/homepage/2023/pianote-logo-red.png" alt="Pianote">
+                    </div>
+                </a>
+                <div class="collapse navbar-collapse d-none d-lg-flex">
+                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                        <!-- Other nav items -->
+                        <li class="nav-item dropdown">
+                            <i class="fa-solid fa-caret-down" aria-hidden="false"></i>
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Features
+                            </a>
+                            <ul class="dropdown-menu" style="color: white;">
+                                <li><a class="dropdown-item" href="https://www.pianote.com/method"><i class="mr-1 text-lg fa-fw far fa-music-note" aria-hidden="true"></i>Method</a></li>
+                                <li><a class="dropdown-item" href="https://www.pianote.com/coaches"><i class="mr-1 text-lg fa-fw far fa-whistle" aria-hidden="true"></i>Coaches</a></li>
+                                <li><a class="dropdown-item" href="https://www.pianote.com/songs"><i class="mr-1 text-lg fa-fw far fa-headphones" aria-hidden="true"></i>Songs</a></li>
+                            </ul>
+                        </li>
+                        <!-- Other dropdowns and nav items -->
+                        <a class="nav-link" href="https://www.pianote.com/choose-plan">Pricing</a>
+                        <a class="nav-link" href="https://www.pianote.com/shop">Shop</a>
+                        <a class="nav-link" href="https://www.pianote.com/blog">Blog</a>
+                        <div class="button-wrap">
+                            <a href="https://www.musora.com/pianote" class="join outline-button" aria-label="Login to Pianote">Login</a>
+                        </div>
+                        <div class="button-wrap">
+                            <a aria-label="Join Pianote" href="/choose-plan" class="join">Start for free <i class="fas fa-arrow-right" style="line-height: 0;" aria-hidden="true"></i></a>
+                        </div>
+                    </ul>
                 </div>
-            </a>
-            <div class="navbar-expand-lg d-none d-md-block">
-                <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                    <li class="nav-item dropdown">
-                        <i class="fa-solid fa-caret-down" aria-hidden="false"></i>
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                            Features
-                        </a>
-                        <ul class="dropdown-menu" style="color: white;">
-                            <li> <a class="dropdown-item font-bebas uppercase select-none text-base tracking-wider rounded-lg px-2 py-1 hover:bg-gray-100 w-full "
-                                    href="https://www.pianote.com/method"><i
-                                        class="mr-1 text-lg fa-fw far fa-music-note" aria-hidden="true"></i>
-                                    Method</a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item font-bebas uppercase select-none text-base tracking-wider rounded-lg px-2 py-1 hover:bg-gray-100 w-full "
-                                    href="https://www.pianote.com/coaches"><i class="mr-1 text-lg fa-fw far fa-whistle"
-                                        aria-hidden="true"></i>
-                                    Coaches</a>
-                            </li>
-                            <li> <a class="dropdown-item font-bebas uppercase select-none text-base tracking-wider rounded-lg px-2 py-1 hover:bg-gray-100 w-full "
-                                    href="https://www.pianote.com/songs"><i class="mr-1 text-lg fa-fw far fa-headphones"
-                                        aria-hidden="true"></i>
-                                    Songs</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <i class="fa-solid fa-caret-down" aria-hidden="false"></i>
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                            Instruments
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li> <a class="dropdown-item font-bebas uppercase select-none text-base tracking-wider rounded-lg px-2 py-1 hover:bg-gray-100 w-full "
-                                    href="https://www.pianote.com/method"><i
-                                        class="mr-1 text-lg fa-fw far fa-music-note" aria-hidden="true"></i>
-                                    Drums</a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item font-bebas uppercase select-none text-base tracking-wider rounded-lg px-2 py-1 hover:bg-gray-100 w-full "
-                                    href="https://www.pianote.com/coaches"><i class="mr-1 text-lg fa-fw far fa-whistle"
-                                        aria-hidden="true"></i>
-                                    Piano</a>
-                            </li>
-                            <li> <a class="dropdown-item font-bebas uppercase select-none text-base tracking-wider rounded-lg px-2 py-1 hover:bg-gray-100 w-full "
-                                    href="https://www.pianote.com/songs"><i class="mr-1 text-lg fa-fw far fa-headphones"
-                                        aria-hidden="true"></i>
-                                    Guitar</a>
-                            </li>
-                            <li> <a class="dropdown-item font-bebas uppercase select-none text-base tracking-wider rounded-lg px-2 py-1 hover:bg-gray-100 w-full "
-                                    href="https://www.pianote.com/songs"><i class="mr-1 text-lg fa-fw far fa-headphones"
-                                        aria-hidden="true"></i>
-                                    Singing</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <a class="nav-link " href="https://www.pianote.com/choose-plan">Pricing</a>
-                    <a class="nav-link" href="https://www.pianote.com/shop">Shop</a>
-                    <a class="nav-link" href="https://www.pianote.com/blog">Blog</a>
-                    <div class="hidden lg:block button-wrap ">
-                        <a href="https://www.musora.com/pianote" class="join outline-button"
-                            aria-label="Login to Pianote">
-                            Login</a>
-                    </div>
-                    <div class="button-wrap ">
-                        <a aria-label="Join Pianote" href="/choose-plan" class="join">
-                            Start for free
-                            <i class="fas fa-arrow-right" style="line-height: 0;" aria-hidden="true"></i>
-                        </a>
-                    </div>
+        
+                <button class="navbar-toggler iconToggler d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+        
 
-                    </u>
-            </div>
-
-            <button class="navbar-toggler iconToggler d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-
-            <script>
+            <!-- <script>
                 let animateMenu = document.querySelector('.iconToggler');
                 animateMenu.onclick = function () {
                     animateMenu.classList.toggle('active');
                 }
-            </script>
+            </script> -->
             <!--right menu-->
-            <div class="offcanvas offcanvas-end d-lg-none menuToggler" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-                    <button type="button" class="btn-close " data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                    <div class="offcanvas-header">
-                        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Offcanvas</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                    </div>
-                    <div class="offcanvas-body">
-                        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                            <li class="nav-item dropdown">
-                                <i class="fa-solid fa-caret-down" aria-hidden="false"></i>
-                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-
-                                    Features
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li>
-                                        <a class="dropdown-item" href="https://www.pianote.com/method">
-                                            <i class="mr-1 text-lg fa-fw far fa-music-note" aria-hidden="true"></i>
-                                            Method
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item" href="https://www.pianote.com/coaches">
-                                            <i class="mr-1 text-lg fa-fw far fa-whistle" aria-hidden="true"></i>
-                                            Coaches
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item" href="https://www.pianote.com/songs">
-                                            <i class="mr-1 text-lg fa-fw far fa-headphones" aria-hidden="true"></i>
-                                            Songs
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <i class="fa-solid fa-caret-down" aria-hidden="false"></i>
-                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                                    aria-expanded="false">
-                                    Instruments
-                                    <i class="fa-solid fa-caret-down" aria-hidden="true"></i></span>
-                                </a>
+            <div class="offcanvas offcanvas-end menuToggler" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Offcanvas</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                        <li class="nav-item dropdown">
+                            <i class="fa-solid fa-caret-down" aria-hidden="false"></i>
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Features</a>
                             <ul class="dropdown-menu">
-                                <li>
-                                    <a class="dropdown-item font-bebas select-none text-base tracking-wider rounded-lg px-2 py-1 hover:bg-gray-100 w-full"
-                                        href="https://www.drumeo.com">
-                                        <i class="mr-1 text-lg fa-fw far fa-drum" aria-hidden="true"></i>
-                                        Drums
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item font-bebas select-none text-base tracking-wider rounded-lg px-2 py-1 hover:bg-gray-100 w-full"
-                                        href="https://www.guitareo.com">
-                                        <i class="mr-1 text-lg fa-fw far fa-guitar" aria-hidden="true"></i>
-                                        Guitar
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item font-bebas select-none text-base tracking-wider rounded-lg px-2 py-1 hover:bg-gray-100 w-full"
-                                        href="https://www.singeo.com">
-                                        <i class="mr-1 text-lg fa-fw far fa-microphone-stand" aria-hidden="true"></i>
-                                        Singing
-                                    </a>
-                                </li>
+                                <li><a class="dropdown-item" href="https://www.pianote.com/method"><i class="mr-1 text-lg fa-fw far fa-music-note" aria-hidden="true"></i>Method</a></li>
+                                <li><a class="dropdown-item" href="https://www.pianote.com/coaches"><i class="mr-1 text-lg fa-fw far fa-whistle" aria-hidden="true"></i>Coaches</a></li>
+                                <li><a class="dropdown-item" href="https://www.pianote.com/songs"><i class="mr-1 text-lg fa-fw far fa-headphones" aria-hidden="true"></i>Songs</a></li>
                             </ul>
                         </li>
-                        <li class="nav-item Pricing">
-                            <a class="" href="https://www.pianote.com/choose-plan">Pricing</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="" href="https://www.pianote.com/shop">Shop</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="" href="https://www.pianote.com/blog">Blog</a>
-                        </li>
-                        <div class="menu-toggle" role="button"></div>
-                        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
-                            data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar"
-                            aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
+                        
+                        <li class="nav-item"><a class="nav-link" href="https://www.pianote.com/choose-plan">Pricing</a></li>
+                        <li class="nav-item"><a class="nav-link" href="https://www.pianote.com/shop">Shop</a></li>
+                        <li class="nav-item"><a class="nav-link" href="https://www.pianote.com/blog">Blog</a></li>
                     </ul>
                 </div>
             </div>
-
-            
-
-            
-
         </div>
     </nav>
 
-
+    
     <section
         class="big-promo-banner text-white text-center relative z-10 overflow-hidden px-5 sm:px-3 lg:px-5 sm:px-8 py-6 sm:pb-12 bg-cover bg-top"
         style="background-image: url('https://d21q7xesnoiieh.cloudfront.net/fit-in/2500x0/filters:quality(95)/marketing/pianote/promos/summer-sale/header-bg.webp')">
@@ -246,6 +131,8 @@
     </section>
     <header class="text-center px-5 sm:px-6 py-44 sm:py-52 lg:py-56 relative overflow-hidden"
         style="background:linear-gradient(to right, #e0ecf9, #f6f8fc, #f6f8fc, #e0ecf9);">
+
+        
         <div class="container max-w-6xl mx-auto relative z-20">
             <h1
                 class="relative w-auto inline-block text-3xl sm:text-5xl lg:text-6xl mb-7 sm:mb-10 font-black font-lexend leading-none sm:leading-none lg:leading-none uppercase">

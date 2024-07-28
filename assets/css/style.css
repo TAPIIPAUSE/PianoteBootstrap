@@ -177,10 +177,11 @@ nav.navStyle {
       display: inline-block;
       box-sizing: border-box;
       height: 100%;
-      float: right;
+   
       font-size: 0;
       padding: 6px 5px 6px 0;
     }
+    
   }
 
   /* Extra large screens (xl) */
@@ -206,12 +207,14 @@ nav.navStyle {
 
   /* Extra extra large screens (xxl) */
   @media (min-width: 1400px) {
+     .navbar.bg-body-tertiary.fixed-top.navStyle {
+      height: 56px;
+    }
+    
     .container-fluid {
       max-width: 1536px;
     }
-    .navbar.bg-body-tertiary.fixed-top.navStyle {
-      height: 56px;
-    }
+   
     .logo {
       padding: 8px 16px;
       max-width: 165px;
@@ -5873,10 +5876,7 @@ p {
   }
 }
 
-@media (min-width: 768px) {
 
- 
-}
 .join .smaller {
   font-size: 13px;
   padding: 7px 25px;
