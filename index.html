@@ -5,12 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
     <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/splide.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
-    <link rel="stylesheet" href="node_modules\bootstrap\scss\_navbar.scss">
+    <link rel="stylesheet" href="node_modules\@splidejs\splide\dist\css\splide.min.css">
+
+
+
     <script>
         function changeColor() {
             document.querySelector("body nav").classList.add("navStyle");
@@ -19,9 +21,107 @@
         function iconToggler(params) {
             document.querySelector("body nav button").classList.add("iconToggler");
             document.querySelector("body nav .offcanvas").classList.add("menuToggler");
+            document.querySelector("body nav .offcanvas button").classList.add("closeBut");
         }
     </script>
 
+    <style>
+        .tool:after,
+        .tool:before {
+            position: absolute;
+            transform: translate(-50%, 0);
+            height: auto;
+            max-height: 0;
+            visibility: hidden;
+            opacity: 0;
+            transition: all .3s;
+            overflow: hidden;
+            font-size: 14px;
+        }
+
+        .tool:before {
+            z-index: 100;
+            content: "";
+            bottom: 23px;
+            left: 50%;
+            border-right: 7px transparent solid;
+            border-left: 7px transparent solid;
+            border-top: 7px solid #fff;
+        }
+
+        .tool:after {
+            padding: 5px 8px;
+            content: attr(tip);
+            font-size: 14px;
+            text-align: left;
+            color: #000;
+            width: 220px;
+            border-radius: 8px;
+            background: #fff;
+            box-shadow: 0 0 15px #000;
+            bottom: 30px;
+            left: -300%;
+        }
+
+        .tool:hover,
+        .tool:active,
+        .tool:focus {
+            z-index: 100;
+        }
+
+        .tool:hover:after,
+        .tool:hover:before,
+        .tool:active:after,
+        .tool:active:before,
+        .tool:focus:after,
+        .tool:focus:before {
+            max-height: 1000px;
+            visibility: visible;
+            opacity: 1;
+            display: block;
+        }
+
+        .splide__pagination__page.is-active {
+            background: #01050F;
+            transform: none !important;
+        }
+
+        .splide__pagination__page {
+            margin: 3px 10px !important;
+            opacity: 1 !important;
+        }
+
+        @media (min-width: 768px) {
+            .splide__pagination__page {
+                margin: 3px 6px !important;
+            }
+        }
+
+        .splide__arrow svg {
+            fill: #f61a30 !important;
+        }
+
+        .bubble:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border: 5px solid transparent;
+            border-top-color: black;
+            border-bottom: 0;
+            margin-left: -5px;
+            margin-bottom: -5px;
+        }
+
+        .splide__slide.is-active .active-bg {
+            background-color: #1B2434 !important;
+            color: #fff !important;
+        }
+    </style>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com/" />
 
 
 
@@ -33,81 +133,266 @@
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
 
-        <nav class="navbar navbar-expand-lg bg-body-tertiary navStyle">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="https://www.pianote.com">
-                    <div class="logo">
-                        <img src="https://d21q7xesnoiieh.cloudfront.net/fit-in/250x0/filters:quality(95)/marketing/pianote/membership/homepage/2023/pianote-logo-red.png" alt="Pianote">
-                    </div>
-                </a>
-                <div class="collapse navbar-collapse d-none d-lg-flex">
-                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                        <!-- Other nav items -->
-                        <li class="nav-item dropdown">
-                            <i class="fa-solid fa-caret-down" aria-hidden="false"></i>
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Features
-                            </a>
-                            <ul class="dropdown-menu" style="color: white;">
-                                <li><a class="dropdown-item" href="https://www.pianote.com/method"><i class="mr-1 text-lg fa-fw far fa-music-note" aria-hidden="true"></i>Method</a></li>
-                                <li><a class="dropdown-item" href="https://www.pianote.com/coaches"><i class="mr-1 text-lg fa-fw far fa-whistle" aria-hidden="true"></i>Coaches</a></li>
-                                <li><a class="dropdown-item" href="https://www.pianote.com/songs"><i class="mr-1 text-lg fa-fw far fa-headphones" aria-hidden="true"></i>Songs</a></li>
-                            </ul>
-                        </li>
-                        <!-- Other dropdowns and nav items -->
-                        <a class="nav-link" href="https://www.pianote.com/choose-plan">Pricing</a>
-                        <a class="nav-link" href="https://www.pianote.com/shop">Shop</a>
-                        <a class="nav-link" href="https://www.pianote.com/blog">Blog</a>
-                        <div class="button-wrap">
-                            <a href="https://www.musora.com/pianote" class="join outline-button" aria-label="Login to Pianote">Login</a>
-                        </div>
-                        <div class="button-wrap">
-                            <a aria-label="Join Pianote" href="/choose-plan" class="join">Start for free <i class="fas fa-arrow-right" style="line-height: 0;" aria-hidden="true"></i></a>
-                        </div>
-                    </ul>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary navStyle">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="https://www.pianote.com">
+                <div class="logo">
+                    <img src="https://d21q7xesnoiieh.cloudfront.net/fit-in/250x0/filters:quality(95)/marketing/pianote/membership/homepage/2023/pianote-logo-red.png"
+                        alt="Pianote">
                 </div>
-        
-                <button class="navbar-toggler iconToggler d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-        
+            </a>
+            <div class="d-none d-lg-block">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <!-- Other nav items -->
+                    <li class="nav-item dropdown">
+                        <i class="fa-solid fa-caret-down" aria-hidden="false"></i>
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Features
+                        </a>
+                        <ul class="dropdown-menu" style="color: white;">
+                            <li><a class="dropdown-item" href="https://www.pianote.com/method"><i
+                                        class="mr-1 text-lg fa-fw far fa-music-note" aria-hidden="true"></i>Method</a>
+                            </li>
+                            <li><a class="dropdown-item" href="https://www.pianote.com/coaches"><i
+                                        class="mr-1 text-lg fa-fw far fa-whistle" aria-hidden="true"></i>Coaches</a>
+                            </li>
+                            <li><a class="dropdown-item" href="https://www.pianote.com/songs"><i
+                                        class="mr-1 text-lg fa-fw far fa-headphones" aria-hidden="true"></i>Songs</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- Other dropdowns and nav items -->
+                    <a class="nav-link" href="https://www.pianote.com/choose-plan">Pricing</a>
+                    <a class="nav-link" href="https://www.pianote.com/shop">Shop</a>
+                    <a class="nav-link" href="https://www.pianote.com/blog">Blog</a>
+                    <div class="button-wrap">
+                        <a href="https://www.musora.com/pianote" class="join outline-button"
+                            aria-label="Login to Pianote">Login</a>
+                    </div>
+                    <div class="button-wrap">
+                        <a aria-label="Join Pianote" href="/choose-plan" class="join">Start for free <i
+                                class="fas fa-arrow-right" style="line-height: 0;" aria-hidden="true"></i></a>
+                    </div>
+                </ul>
+            </div>
 
-            <!-- <script>
+            <button class="navbar-toggler iconToggler d-lg-none" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+
+            <script>
                 let animateMenu = document.querySelector('.iconToggler');
                 animateMenu.onclick = function () {
                     animateMenu.classList.toggle('active');
                 }
-            </script> -->
+
+                // Get references to the button and offcanvas
+                const button = document.getElementById('offcanvasButton');
+                const offcanvas = document.getElementById('offcanvasExample');
+
+                // Function to show or hide the offcanvas based on screen size
+                function toggleOffcanvas() {
+                    if (window.innerWidth < 768) { // Adjust breakpoint as needed
+                        offcanvas.classList.add('show');
+                    } else {
+                        offcanvas.classList.remove('show');
+                    }
+                }
+
+                // Initial call to toggle offcanvas
+                toggleOffcanvas();
+
+                // Event listener for window resize
+                window.addEventListener('resize', toggleOffcanvas);
+            </script>
             <!--right menu-->
-            <div class="offcanvas offcanvas-end menuToggler" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-                <div class="offcanvas-header">
-                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Offcanvas</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                </div>
+            <div class="offcanvas offcanvas-end d-md-none" tabindex="-1" id="offcanvasNavbar"
+                aria-labelledby="offcanvasNavbarLabel">
+                <button type="button" class="btn-close closeBut" data-bs-dismiss="offcanvas"
+                    aria-label="Close"></button>
                 <div class="offcanvas-body">
                     <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+
+                        <li class="nav-item"><a class="menuToggle"
+                                href="https://www.pianote.com/choose-plan">Pricing</a>
+                        </li>
+                        <li class="nav-item"><a class="menuToggle" href="https://www.pianote.com/shop">Shop</a></li>
+                        <li class="nav-item"><a class="menuToggle" href="https://www.pianote.com/blog">Blog</a></li>
+
+                        <li class="nav-item"> <a class="menuToggle" href="https://www.musora.com/login" target="_parent"
+                                rel="" aria-label="Member Login">
+
+                                <i class="fas fa-sign-in text-pianote" role="img" aria-label="Member Login Icon"
+                                    aria-hidden="true"></i>
+                                Member Login
+                            </a></li>
+                        <li class="nav-item">
+                            <a class="menuToggle" href="/" target="_parent" rel="" aria-label="Home">
+
+                                <i class="fas fa-home text-pianote" role="img" aria-label="Home Icon"
+                                    aria-hidden="true"></i>
+                                Home
+                            </a>
+                        </li>
+
                         <li class="nav-item dropdown">
                             <i class="fa-solid fa-caret-down" aria-hidden="false"></i>
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Features</a>
+                            <a class="menuToggle dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">Features</a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="https://www.pianote.com/method"><i class="mr-1 text-lg fa-fw far fa-music-note" aria-hidden="true"></i>Method</a></li>
-                                <li><a class="dropdown-item" href="https://www.pianote.com/coaches"><i class="mr-1 text-lg fa-fw far fa-whistle" aria-hidden="true"></i>Coaches</a></li>
-                                <li><a class="dropdown-item" href="https://www.pianote.com/songs"><i class="mr-1 text-lg fa-fw far fa-headphones" aria-hidden="true"></i>Songs</a></li>
+                                <li><a class="dropdown-item" href="https://www.pianote.com/method"><i
+                                            class="mr-1 text-lg fa-fw far fa-music-note"
+                                            aria-hidden="true"></i>Method</a></li>
+                                <li><a class="dropdown-item" href="https://www.pianote.com/coaches"><i
+                                            class="mr-1 text-lg fa-fw far fa-whistle" aria-hidden="true"></i>Coaches</a>
+                                </li>
+                                <li><a class="dropdown-item" href="https://www.pianote.com/songs"><i
+                                            class="mr-1 text-lg fa-fw far fa-headphones"
+                                            aria-hidden="true"></i>Songs</a></li>
                             </ul>
                         </li>
-                        
-                        <li class="nav-item"><a class="nav-link" href="https://www.pianote.com/choose-plan">Pricing</a></li>
-                        <li class="nav-item"><a class="nav-link" href="https://www.pianote.com/shop">Shop</a></li>
-                        <li class="nav-item"><a class="nav-link" href="https://www.pianote.com/blog">Blog</a></li>
+                        <li class="nav-item dropdown">
+                            <i class="fa-solid fa-caret-down" aria-hidden="false"></i>
+                            <a class="menuToggle dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">Instruments</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="https://www.pianote.com/method"><i
+                                            class="mr-1 text-lg fa-fw far fa-music-note"
+                                            aria-hidden="true"></i>Drums</a></li>
+                                <li><a class="dropdown-item" href="https://www.pianote.com/coaches"><i
+                                            class="mr-1 text-lg fa-fw far fa-whistle" aria-hidden="true"></i>Guitar</a>
+                                </li>
+                                <li><a class="dropdown-item" href="https://www.pianote.com/songs"><i
+                                            class="mr-1 text-lg fa-fw far fa-headphones"
+                                            aria-hidden="true"></i>Singing</a></li>
+                            </ul>
+                        </li>
+
+
+
+
+
+                        <a class="" href="/shop" target="_parent" rel="" aria-label="Shop">
+                            <div class="nav-link">
+                                <i class="fas fa-tag text-pianote" role="img" aria-label="Shop Icon"
+                                    aria-hidden="true"></i>
+                                Shop
+
+                            </div>
+                        </a>
+                        <a class="" href="/blog" target="_parent" rel="" aria-label="Blog">
+                            <div class="nav-link">
+                                <i class="fas fa-comment-pen text-pianote" role="img" aria-label="Blog Icon"
+                                    aria-hidden="true"></i>
+                                Blog
+
+                            </div>
+                        </a>
+
+                        <li class="nav-item dropdown">
+                            <a class="menuToggle dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">Free Resources</a>
+
+                            <div class="drop-down-arrow ">
+                                <span class="bg-pianote"></span>
+                                <span class="bg-pianote"></span>
+                            </div>
+                            <ul class="dropdown-menu">
+
+                                <li> <a class="dropdown-item" href="/chord-hacks" target="_parent" rel=""
+                                        aria-label="Chord Hacks">
+
+                                        Chord Hacks
+
+
+                                    </a></li>
+                                <li> <a class="dropdown-item" href="/getting-started" target="_parent" rel=""
+                                        aria-label="Getting Started On The Piano">
+
+                                        Getting Started On The Piano
+
+
+                                    </a></li>
+                                <li><a class="dropdown-item" href="/learn-songs" target="_parent" rel=""
+                                        aria-label="Learn 3 Songs On Piano">
+
+                                        Learn 3 Songs On Piano
+
+
+                                    </a></li>
+                                <li><a class="dropdown-item" href="/piano-in-5-days" target="_parent" rel=""
+                                        aria-label="5 Days To Playing Piano">
+
+                                        5 Days To Playing Piano
+
+
+                                    </a></li>
+                                <li> <a class="dropdown-item" href="/classical-piano" target="_parent" rel=""
+                                        aria-label="Classical Piano Quick Start">
+
+                                        Classical Piano Quick Start
+
+
+                                    </a></li>
+                                <li><a class="dropdown-item" href="/sight-reading-made-simple" target="_parent" rel=""
+                                        aria-label="Sight Reading Made Simple">
+
+                                        Sight Reading Made Simple
+
+                                    </a></li>
+
+
+                            </ul>
+                        </li>
+
+
+
+
+
+                        <a class="" href="/about" target="_parent" rel="" aria-label="About Us">
+                            <div class="nav-link">
+                                <i class="fas fa-users text-pianote" role="img" aria-label="About Us Icon"
+                                    aria-hidden="true"></i>
+                                About Us
+
+                            </div>
+                        </a>
+                        <span class="shim"></span>
+                        <a href="/app" target="_parent" rel="">
+                            <h4 class="secondary-link"><i class="fas fa-fw fa-mobile-alt" aria-hidden="true"></i>&nbsp;
+                                Mobile App </h4>
+                        </a> <a href="https://youtube.com/user/pianolessonscom" target="_blank" rel="noopener">
+                            <h4 class="secondary-link"><i class="fab fa-fw fa-youtube" aria-hidden="true"></i>&nbsp;
+                                YouTube</h4>
+                        </a> <a href="https://facebook.com/pianoteofficial" target="_blank" rel="noopener">
+                            <h4 class="secondary-link"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i>&nbsp;
+                                Facebook</h4>
+                        </a> <a href="https://instagram.com/pianoteofficial" target="_blank" rel="noopener">
+                            <h4 class="secondary-link"><i class="fab fa-fw fa-instagram" aria-hidden="true"></i>&nbsp;
+                                Instagram</h4>
+                        </a> <a href="https://www.tiktok.com/@pianoteofficial" target="_blank" rel="noopener">
+                            <h4 class="secondary-link"><i class="fab fa-fw fa-tiktok" aria-hidden="true"></i>&nbsp;
+                                TikTok</h4>
+                        </a> <a href="https://help.musora.com/" target="_parent" rel="">
+                            <h4 class="secondary-link"><i class="fas fa-fw fa-question" aria-hidden="true"></i>&nbsp;
+                                FAQs</h4>
+                        </a> <a href="https://www.musora.com/contact" target="_parent" rel="">
+                            <h4 class="secondary-link"><i class="fas fa-fw fa-phone" aria-hidden="true"></i>&nbsp;
+                                Contact</h4>
+                        </a> <span class="shim"></span>
+
                     </ul>
                 </div>
             </div>
         </div>
     </nav>
 
-    
+
     <section
         class="big-promo-banner text-white text-center relative z-10 overflow-hidden px-5 sm:px-3 lg:px-5 sm:px-8 py-6 sm:pb-12 bg-cover bg-top"
         style="background-image: url('https://d21q7xesnoiieh.cloudfront.net/fit-in/2500x0/filters:quality(95)/marketing/pianote/promos/summer-sale/header-bg.webp')">
@@ -132,7 +417,7 @@
     <header class="text-center px-5 sm:px-6 py-44 sm:py-52 lg:py-56 relative overflow-hidden"
         style="background:linear-gradient(to right, #e0ecf9, #f6f8fc, #f6f8fc, #e0ecf9);">
 
-        
+
         <div class="container max-w-6xl mx-auto relative z-20">
             <h1
                 class="relative w-auto inline-block text-3xl sm:text-5xl lg:text-6xl mb-7 sm:mb-10 font-black font-lexend leading-none sm:leading-none lg:leading-none uppercase">
@@ -236,31 +521,33 @@
                 alt="header circle image" fetchpriority="high">
         </picture>
     </header>
+   
+
 
     <section class="sm:px-6 py-4 sm:py-5 text-white relative z-10" style="background:#0c1524;">
         <div class="container max-w-5xl mx-auto">
             <div x-data="{
-        init() {
-            new Splide(this.$refs.splide, {
-                
-                    classes: {
-                        arrow: 'splide__arrow bg-white opacity-100 shadow-lg h-11 w-11 header-slide-btn',
-                        prev: 'splide__arrow--prev your-class-prev hidden sm:flex z-50',
-                        next: 'splide__arrow--next your-class-next hidden sm:flex z-50',
-                        pagination: 'hidden',
-                    },
-                    perPage: 1,
-                    perMove: 1,
-                    type: 'loop',
-                    autoplay: true,
-                    pauseOnHover: true,
-                    pauseOnFocus: true,
-                    interval: 3000,
-                    lazyLoad: 'nearby',
-                
-            }).mount()
-        },
-    }">
+                init() {
+                    new Splide(this.$refs.splide, {
+                        
+                            classes: {
+                                arrow: 'splide__arrow bg-white opacity-100 shadow-lg h-11 w-11 header-slide-btn',
+                                prev: 'splide__arrow--prev your-class-prev hidden sm:flex z-50',
+                                next: 'splide__arrow--next your-class-next hidden sm:flex z-50',
+                                pagination: 'hidden',
+                            },
+                            perPage: 1,
+                            perMove: 1,
+                            type: 'loop',
+                            autoplay: true,
+                            pauseOnHover: true,
+                            pauseOnFocus: true,
+                            interval: 3000,
+                            lazyLoad: 'nearby',
+                        
+                    }).mount()
+                },
+            }">
                 <div x-ref="splide"
                     class="splide max-w-6xl mx-auto relative splide--loop splide--ltr splide--draggable is-active is-overflow is-initialized"
                     id="splide01" role="region" aria-roledescription="carousel">
@@ -285,7 +572,7 @@
                         style="z-index: 10; padding-left: 0px; padding-right: 0px;" id="splide01-track"
                         aria-live="polite" aria-atomic="true" aria-busy="false">
                         <ul class="splide__list h-auto" id="splide01-list" role="presentation"
-                            style="transform: translateX(-1918.4px);">
+                            style="transform: translateX(-1979.2px);">
                             <li class="splide__slide splide__slide--clone" id="splide01-clone01" role="tabpanel"
                                 aria-roledescription="slide" aria-label="3 of 4" style="width: calc(100%);"
                                 aria-hidden="true">
@@ -299,8 +586,7 @@
                                             alt="Ali Spagnola" style="display: none;"><br class="inline md:hidden">
                                         <p
                                             class="leading-tight w-full text-center md:w-auto text-sm text-light-navy ml-1 md:ml-2 mr-0 mt-0.5 md:mt-0">
-                                            <em>Ali Spagnola, YouTube Entertainer</em>
-                                        </p>
+                                            <em>Ali Spagnola, YouTube Entertainer</em></p>
                                         <span class="splide__spinner"></span>
                                     </div>
                                 </div>
@@ -319,8 +605,7 @@
                                             style=""><br class="inline md:hidden">
                                         <p
                                             class="leading-tight w-full text-center md:w-auto text-sm text-light-navy ml-1 md:ml-2 mr-0 mt-0.5 md:mt-0">
-                                            <em>MusicRadar, Website For Musicians</em>
-                                        </p>
+                                            <em>MusicRadar, Website For Musicians</em></p>
                                     </div>
                                 </div>
                             </li>
@@ -336,8 +621,7 @@
                                             style=""><br class="inline md:hidden">
                                         <p
                                             class="leading-tight w-full text-center md:w-auto text-sm text-light-navy ml-1 md:ml-2 mr-0 mt-0.5 md:mt-0">
-                                            <em>Yvette Young, Multi-Instrumentalist</em>
-                                        </p>
+                                            <em>Yvette Young, Multi-Instrumentalist</em></p>
                                     </div>
                                 </div>
                             </li>
@@ -355,8 +639,7 @@
                                             style=""><br class="inline md:hidden">
                                         <p
                                             class="leading-tight w-full text-center md:w-auto text-sm text-light-navy ml-1 md:ml-2 mr-0 mt-0.5 md:mt-0">
-                                            <em>American Songwriter, Music Magazine</em>
-                                        </p>
+                                            <em>American Songwriter, Music Magazine</em></p>
                                     </div>
                                 </div>
                             </li>
@@ -373,8 +656,7 @@
                                             class="inline md:hidden">
                                         <p
                                             class="leading-tight w-full text-center md:w-auto text-sm text-light-navy ml-1 md:ml-2 mr-0 mt-0.5 md:mt-0">
-                                            <em>Ali Spagnola, YouTube Entertainer</em>
-                                        </p>
+                                            <em>Ali Spagnola, YouTube Entertainer</em></p>
                                     </div>
                                 </div>
                             </li>
@@ -391,8 +673,7 @@
                                             style=""><br class="inline md:hidden">
                                         <p
                                             class="leading-tight w-full text-center md:w-auto text-sm text-light-navy ml-1 md:ml-2 mr-0 mt-0.5 md:mt-0">
-                                            <em>MusicRadar, Website For Musicians</em>
-                                        </p>
+                                            <em>MusicRadar, Website For Musicians</em></p>
                                     </div>
                                 </div>
                             </li>
@@ -410,8 +691,7 @@
                                             class="inline md:hidden">
                                         <p
                                             class="leading-tight w-full text-center md:w-auto text-sm text-light-navy ml-1 md:ml-2 mr-0 mt-0.5 md:mt-0">
-                                            <em>Yvette Young, Multi-Instrumentalist</em>
-                                        </p>
+                                            <em>Yvette Young, Multi-Instrumentalist</em></p>
                                     </div>
                                 </div>
                             </li>
@@ -429,8 +709,7 @@
                                             class="inline md:hidden">
                                         <p
                                             class="leading-tight w-full text-center md:w-auto text-sm text-light-navy ml-1 md:ml-2 mr-0 mt-0.5 md:mt-0">
-                                            <em>American Songwriter, Music Magazine</em>
-                                        </p>
+                                            <em>American Songwriter, Music Magazine</em></p>
                                         <span class="splide__spinner"></span>
                                     </div>
                                 </div>
@@ -453,6 +732,8 @@
         </div>
     </section>
 
+
+    <div id="method" class="anchor"></div>
     <section class="text-center px-5 sm:px-6 py-10 sm:py-14 lg:py-20">
         <div class="container max-w-5xl mx-auto">
             <h2 class="leading-tight"><strong><span
@@ -764,6 +1045,16 @@
                         <section x-ref="splide"
                             class="splide mb-20 h-44 sm:h-48 lg:h-72 splide--loop splide--ltr splide--draggable is-active is-overflow is-initialized"
                             id="splide02" aria-roledescription="carousel">
+                            <div class="splide__arrows splide__arrows--ltr"><button
+                                    class="splide__arrow bg-white opacity-100 shadow-lg h-11 w-11 header-slide-btn splide__arrow--prev your-class-prev hidden sm:flex z-50"
+                                    type="button" aria-label="Previous slide" aria-controls="splide01-track"><svg
+                                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" width="40" height="40"
+                                        focusable="false">
+                                        <path
+                                            d="m15.5 0.932-4.3 4.38 14.5 14.6-14.5 14.5 4.3 4.4 14.6-14.6 4.4-4.3-4.4-4.4-14.6-14.6z">
+                                        </path>
+                                    </svg></button>
+                            </div>
                             <div class="splide__arrows splide__arrows--ltr"><button
                                     class="splide__arrow bg-white opacity-100 shadow-lg h-11 w-11 splide__arrow--prev your-class-prev hidden sm:flex -left-1"
                                     type="button" aria-label="Previous slide" aria-controls="splide02-track"><svg
@@ -3523,6 +3814,8 @@
         </div>
     </section>
     <div class="unstick-trigger block"></div>
+
+    <script src="node_modules\@splidejs\splide\dist\js\splide.min.js"></script>
 </body>
 
 </html>

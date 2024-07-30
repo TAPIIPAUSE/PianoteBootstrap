@@ -77,14 +77,7 @@ nav.navStyle {
       max-width: 640px;
     }
 
-    .button-wrap {
-      display: inline-block;
-      box-sizing: border-box;
-      height: 100%;
-      float: right;
-      font-size: 0;
-      padding: 6px 5px 6px 0;
-    }
+  
   }
 
   /* Small screens (sm) */
@@ -107,14 +100,7 @@ nav.navStyle {
       max-width: 768px;
     }
 
-    .button-wrap {
-      display: inline-block;
-      box-sizing: border-box;
-      height: 100%;
-      float: right;
-      font-size: 0;
-      padding: 6px 5px 6px 0;
-    }
+   
   }
 
   /* Medium screens (md) */
@@ -145,14 +131,7 @@ nav.navStyle {
     .join {
       font-size: 15px;
     }
-    .button-wrap {
-      display: inline-block;
-      box-sizing: border-box;
-      height: 100%;
-      float: right;
-      font-size: 0;
-      padding: 6px 5px 6px 0;
-    }
+ 
   }
 
   /* Large screens (lg) Full Computer size */
@@ -173,14 +152,9 @@ nav.navStyle {
       font-size: 10px;
       padding: 13px 30px 12px;
     }
-    .button-wrap {
-      display: inline-block;
-      box-sizing: border-box;
-      height: 100%;
+ 
+
    
-      font-size: 0;
-      padding: 6px 5px 6px 0;
-    }
     
   }
 
@@ -237,6 +211,8 @@ nav.navStyle {
 
 }
 
+
+
 nav button.iconToggler {
   position: relative;
   width: auto;
@@ -245,7 +221,7 @@ nav button.iconToggler {
   align-items: center;
 }
 
-button.navbar-toggler.iconToggler span {
+button.iconToggler span {
   position: absolute;
   background: white;
   width: 16px;
@@ -254,18 +230,18 @@ button.navbar-toggler.iconToggler span {
   transition: 0.5s;
 }
 
-button.navbar-toggler.iconToggler span:nth-child(1) {
+button.iconToggler span:nth-child(1) {
   transform: translateY(-6px);
   width: 8;
   height: 3px;
 }
 
-button.navbar-toggler.iconToggler span:nth-child(2) {
+button.iconToggler span:nth-child(2) {
   transform: translateY(6px);
   width: 8;
   height: 3px;
 
-  button.navbar-toggler.iconToggler.active span:nth-child(3) {
+  button.iconToggler.active span:nth-child(3) {
     transform: translateY(12px);
     width: 8;
     height: 3px;
@@ -279,6 +255,30 @@ a.nav-link {
 
 a:hover.nav-link {
   color: red;
+}
+
+a.menuToggle {
+  color: black;
+}
+.offcanvas {
+  position: fixed;
+  bottom: 0;
+  z-index: var(--bs-offcanvas-zindex);
+  
+  flex-direction: column;
+  max-width: 100%;
+  color: var(--bs-offcanvas-color);
+  visibility:visible;
+  background-color: var(--bs-offcanvas-bg);
+  background-clip: padding-box;
+  outline: 0;
+  transition: var(--bs-offcanvas-transition);
+}
+
+
+button.btn-close.closeBut {
+  color: black !important;
+  
 }
 .join {
 
@@ -330,13 +330,17 @@ a.join.smaller {
   font-size: 15px / 1em Bebas Neue, sans-serif;
 }
 
+
+.splide__arrow svg {
+  fill: #f61a30 !important;
+}
 .bg-cover {
   background-size: cover;
 }
 .mx-auto {
   margin-left: auto !important;
   margin-right: auto !important;
-}
+} 
 .z-30 {
   z-index: 30 !important;
 }
